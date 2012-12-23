@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
   
   validates :screen_name, :uniqueness => true, :presence => true
-  validates :email, :uniqueness => true
+  validates :email, :presence => true, :uniqueness => true
   
   before_save :default_values
 
