@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :bleats  
   has_many :authorizations, :dependent => :destroy
   
+  validates :screen_name, :uniqueness => true, :presence => true
   validates :email, :uniqueness => true
   
   before_save :default_values
