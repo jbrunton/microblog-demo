@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
   controller.authorize_resource
+  controller { with_role :admin }
   
   scope :active
   
@@ -24,6 +25,9 @@ ActiveAdmin.register User do
       row :screen_name
       row :created_at
       row :last_sign_in_at
+      row :roles do |user|
+        user.roles.map { |role| link_to role.name, admin_role_path(role) }.join(', ').html_safe
+      end
       row :bio
     end
     active_admin_comments
@@ -33,6 +37,7 @@ ActiveAdmin.register User do
     f.inputs "Details" do
       f.input :email
       f.input :screen_name
+      f.input :roles, :as => :check_boxes
       f.input :bio
     end
     f.buttons
