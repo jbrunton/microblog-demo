@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe User do
-  it "should require an email" do
-    user = User.new(:email => "")
-    expect(user).not_to be(true)
+  context "validations" do
+    it "is invalid without an email" do
+      user = build(:user, email: "")
+      expect(user).to be_invalid
+    end
   end
 end
