@@ -39,5 +39,8 @@ RSpec.configure do |config|
   # Enable FactoryGirl syntax methods
   config.include FactoryGirl::Syntax::Methods
   
+  # Enable Devise helpers for integration testing
   config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, :type => :view
 end
+Warden.test_mode!

@@ -1,0 +1,42 @@
+<nav class="top-bar">
+    <ul>
+        <li class="name"><h1><a href="/">Bleater</a></h1></li>
+    </ul>
+  
+    <section>
+        <ul class="right">
+            <% if user_signed_in? %>
+                <li>
+                    <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
+                </li>
+                <li>
+                    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+                </li>
+                <% if current_user.admin? %>
+                    <li>
+                        <%= link_to "Admin", "/admin" %>
+                    </li>
+                <% end %>
+                <li>
+                    <%= link_to 'Compose', new_bleat_path %>
+                </li>       
+            <% else %>
+                <li>
+                    <%= link_to 'Sign in', new_user_session_path %>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Sign in with</a>
+            
+                    <ul class="dropdown">
+                        <% for provider in User.omniauth_providers %>
+                            <li>
+                                <%= link_to provider.to_s.titleize, user_omniauth_authorize_path(provider) %>
+                            </li>
+                        <% end %>
+                    </ul>
+            
+                </li> 
+            <% end %>
+        </ul>
+    </section>
+</nav>
