@@ -1,7 +1,8 @@
+<% cache [bleat, bleat.owned_by?(current_user)] do %>
 <div class="bleat panel radius">
     <div class="collapse row">
         <div class='actions'>
-            <% if can? :destroy, bleat %>
+            <% if bleat.owned_by?(current_user) %>
                 <%= link_to bleat, method: :delete, data: { confirm: 'Are you sure?' } do %>
                     <i class="general foundicon-trash"></i>
                 <% end %>
@@ -14,3 +15,4 @@
         </div>
     </div>
 </div>
+<% end %>

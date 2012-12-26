@@ -1,5 +1,6 @@
 class BleatsController < ApplicationController
   load_and_authorize_resource :except => :create
+  cache_sweeper :bleat_sweeper
 
   def new
     @bleat = current_user.bleats.build

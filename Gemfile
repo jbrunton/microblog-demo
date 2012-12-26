@@ -13,6 +13,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'cache_digests'
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'

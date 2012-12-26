@@ -15,4 +15,8 @@ class Bleat < ActiveRecord::Base
       self.hash_tags.build :tag => tag
     end
   end
+  
+  def owned_by?(user)
+    !user.nil? && user.id == self.user.try(:id)
+  end
 end
