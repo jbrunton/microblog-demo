@@ -18,6 +18,11 @@ Then /^the first bleat should contain "(.*)"$/ do |content|
   page.all(".bleat").first.should have_content(content)
 end
 
+Then /^the first bleat should contain a link to the "(.*?)" tag$/ do |hashtag|
+  trending_url = url_for(:action => 'trending', :controller => 'bleats', :tag => hashtag)
+  page.all(".bleat").first.should have_link(hashtag, trending_url)
+end
+
 Then /^"(.*?)" should be a trending hashtag$/ do |hashtag|
   page.all(".trending").first.should have_content(hashtag)
 end

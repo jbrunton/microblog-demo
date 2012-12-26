@@ -14,3 +14,8 @@ Feature: News feed
         Given a bleat with the content "#winning"
         When I visit the home page
         Then "#winning" should be a trending hashtag
+
+    Scenario: Hashtag links
+        Given a bleat with the content "#winning"
+        When I visit the home page
+        Then the first bleat should contain a link to the "#winning" tag
