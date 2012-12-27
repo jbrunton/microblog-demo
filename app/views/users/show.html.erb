@@ -1,5 +1,8 @@
 <div class="row">
-    <div class="six columns">        
+    <div class="six columns push-six">
+        <%= render @user %>       
+    </div>
+    <div class="six columns pull-six">        
         <div class="radius panel">
             <h4 class="title">
                 <%= @user.screen_name %>'s bleats
@@ -9,7 +12,4 @@
         <%= render @user.bleats %>
 		
 	</div>
-    <div class="six columns">
-        <%= render @user %>       
-    </div>
 </div>

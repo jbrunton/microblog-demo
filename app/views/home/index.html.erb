@@ -1,5 +1,23 @@
 <div class="row">
-	<div class="bleats six columns">
+    <div class="six columns push-six">
+        <% unless signed_in? %>
+            <%= render 'home/welcome' %>
+        <% end %>
+        
+        <div class="radius panel">
+            <h5 class="title">
+                Trending
+            </h5>
+            <ul class="trending">
+                <% @trending_tags.each do |tag| %>
+                   <li>
+                       <%= link_to tag, controller: 'bleats', action: 'trending', tag: tag %>
+                   </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+	<div class="bleats six columns pull-six">
 		
         <div class="radius panel">
             <h4 class="title">Recent Bleats</h4>
@@ -7,24 +25,6 @@
 
 		<%= render @bleats %>
 
-	</div>
-	<div class="six columns">
-	    <% unless signed_in? %>
-    	    <%= render 'home/welcome' %>
-	    <% end %>
-	    
-	    <div class="radius panel">
-	        <h5 class="title">
-	            Trending
-	        </h5>
-	        <ul class="trending">
-                <% @trending_tags.each do |tag| %>
-                   <li>
-                       <%= link_to tag, controller: 'bleats', action: 'trending', tag: tag %>
-                   </li>
-                <% end %>
-            </ul>
-	    </div>
 	</div>
 </div>
 	
