@@ -1,0 +1,33 @@
+.top-bar ul > li.search form {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  top: 9px;
+}
+
+.top-bar ul > li.search form input[type="text"] {
+  margin: 0;
+  padding: 0 13px;
+  border-radius: 13px;
+  height: 26px;
+  font-size: 12px;
+}
+
+.top-bar ul > li.search form input[type="text"] + button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  border: 0 none;
+  box-shadow: none;
+  background: none;
+  color: #999;
+  padding: 1px 6px;
+  margin: 0;
+}
+
+.top-bar ul > li.search form button i {
+  width: 0;
+  height: 0;
+}

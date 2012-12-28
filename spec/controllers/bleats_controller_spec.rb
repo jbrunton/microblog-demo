@@ -28,4 +28,18 @@ describe BleatsController do
       end
     end
   end
+  
+  describe "GET search" do
+    let(:bleat) { create(:bleat, :content => "howdy!") }
+    
+    it "renders the search template" do
+      get :search, :q => 'howdy'
+      response.should render_template("search")
+    end
+    
+    it "should respond with bleats matching the query" do
+      get :search, :q => 'howdy'
+      assigns[:bleats].should include(bleat)
+    end
+  end
 end

@@ -19,6 +19,7 @@ MicroBlog::Application.routes.draw do
   resources :bleats
   
   match '/trending/:tag' => 'bleats#trending'
+  match '/search' => 'bleats#search'
 
 
   get "home/index"

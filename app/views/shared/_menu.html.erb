@@ -5,6 +5,18 @@
     </ul>
   
     <section>
+        <ul class="left">
+            <li class="search has-button">
+                <form method="get" action="/search">
+                    <input id="search-box" name="q" type="text">
+                    </input>
+                    <button id="search-submit">
+                        <i class="general foundicon-search">
+                        </i>
+                    </button>
+                </form>
+            </li>
+        </ul>
         <ul class="right">
             <% if user_signed_in? %>
                 <li>

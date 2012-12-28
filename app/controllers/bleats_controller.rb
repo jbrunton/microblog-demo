@@ -1,5 +1,5 @@
 class BleatsController < ApplicationController
-  load_and_authorize_resource :except => :create
+  load_and_authorize_resource :except => [:create, :search, :trending]
   cache_sweeper :bleat_sweeper
 
   def new
@@ -39,6 +39,11 @@ class BleatsController < ApplicationController
     # TODO: group and sort
     @tag = params[:tag]
     @bleats = Bleat.joins(:hash_tags).where('tag = ?', @tag)
+  end
+  
+  def search
+    @query = params[:q]
+    @bleats = Bleat.where("content LIKE ?", "%#{@query}%")
   end
 end
 
