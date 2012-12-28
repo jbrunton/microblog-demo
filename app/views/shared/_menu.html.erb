@@ -8,25 +8,25 @@
         <ul class="right">
             <% if user_signed_in? %>
                 <li>
-                    <%= link_to "Welcome, #{current_user.screen_name}!", current_user %>
+                    <%= link_to t('.welcome_user', :name => current_user.screen_name), current_user %>
                 </li>
                 <li>
-                    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+                    <%= link_to t('.sign_out'), destroy_user_session_path, :method => :delete %>
                 </li>
                 <% if current_user.admin? %>
                     <li>
-                        <%= link_to "Admin", "/admin" %>
+                        <%= link_to t('.admin'), "/admin" %>
                     </li>
                 <% end %>
                 <li>
-                    <%= link_to 'Compose', new_bleat_path %>
+                    <%= link_to t('.compose'), new_bleat_path %>
                 </li>       
             <% else %>
                 <li>
-                    <%= link_to 'Sign in', new_user_session_path %>
+                    <%= link_to t('.sign_in'), new_user_session_path %>
                 </li>
                 <li class="has-dropdown">
-                    <a href="#">Sign in with</a>
+                    <a href="#"><%= t('.sign_in_with')%></a>
             
                     <ul class="dropdown">
                         <% for provider in User.omniauth_providers %>
@@ -34,8 +34,7 @@
                                 <%= link_to provider.to_s.titleize, user_omniauth_authorize_path(provider) %>
                             </li>
                         <% end %>
-                    </ul>
-            
+                    </ul>            
                 </li> 
             <% end %>
         </ul>

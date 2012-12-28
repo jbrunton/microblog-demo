@@ -1,0 +1,10 @@
+en:
+  shared:
+    menu:
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+      sign_in_with: "Sign in with"
+      sign_out: "Sign out"
+      welcome_user: "Welcome, %{name}!"
+      admin: "Admin"  
+      compose: "Compose"
