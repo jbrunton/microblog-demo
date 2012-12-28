@@ -1,4 +1,5 @@
 fr:
   welcome:
     welcome_to_bleater: Bienvenue sur Bleater
+    sign_in_or_sign_up_to_get_started: '%{sign_in} ou %{sign_up} pour commencer'
     

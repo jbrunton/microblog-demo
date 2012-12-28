@@ -1,6 +1,6 @@
 en:
   auth:
-    sign_up: "Sign up"
-    sign_in: "Sign in"
-    sign_in_with: "Sign in with"
-    sign_out: "Sign out"
+    sign_up: Sign up
+    sign_in: Sign in
+    sign_in_with: Sign in with
+    sign_out: Sign out

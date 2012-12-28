@@ -1,6 +1,6 @@
 es:
   auth:
-    sign_up: "Registrarse"
-    sign_in: "Iniciar la sesión"
-    sign_in_with: "Iniciar sesión con"
-    sign_out: "Finalizar la sesión"
+    sign_up: Regístrate
+    sign_in: Iniciar sesión
+    sign_in_with: Iniciar sesión con
+    sign_out: Finalizar sesión
