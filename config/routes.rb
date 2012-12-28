@@ -1,5 +1,5 @@
 MicroBlog::Application.routes.draw do
-  scope "(:locale)", :locale => /en|es|fr/ do
+  scope ":locale" do
     ActiveAdmin.routes(self)
 
     match '/users/auth/:provider/callback' => 'authorizations#create' 
