@@ -1,1 +1,6 @@
 es:
+  shared:
+    menu:
+      welcome_user: "Benvinguda, %{name}!"
+      admin: "Administración"  
+      compose: "Componer"

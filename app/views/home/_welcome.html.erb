@@ -1,7 +1,10 @@
 <% cache do %>
     <div id="welcome" class="radius callout panel">
-        <h4 class="subheader">Welcome to Bleater!</h4>
-        <p><%= link_to 'Sign in', :new_user_session, :class => 'small round button' %> or
-           <%= link_to 'Sign up', :register_user, :class => 'small round button' %> to get started.</p>
+        <h4 class="subheader"><%= t('welcome.welcome_to_bleater') %></h4>
+        <p>
+            <%= (I18n.t 'welcome.sign_in_or_sign_up_to_get_started',
+                :sign_in => link_to(t('auth.sign_in'), :new_user_session, :class => 'small round button'),
+                :sign_up => link_to(t('auth.sign_up'), :register_user, :class => 'small round button')).html_safe %>
+        </p>
     </div>
 <% end %>
