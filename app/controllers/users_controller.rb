@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
-  caches_action :show, :layout => false
-  cache_sweeper :user_sweeper
   
   # GET /users
   # GET /users.json

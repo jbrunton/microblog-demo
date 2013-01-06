@@ -1,6 +1,5 @@
 class BleatsController < ApplicationController
-  load_and_authorize_resource :except => :create
-  cache_sweeper :bleat_sweeper
+  load_and_authorize_resource :except => [:create]
 
   def new
     @bleat = current_user.bleats.build
@@ -33,12 +32,6 @@ class BleatsController < ApplicationController
       format.html { redirect_to user_path(@user) }
       format.json { head :no_content }
     end
-  end  
-  
-  def trending
-    # TODO: group and sort
-    @tag = params[:tag]
-    @bleats = Bleat.joins(:hash_tags).where('tag = ?', @tag)
-  end
+  end    
 end
 

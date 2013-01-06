@@ -25,4 +25,20 @@ describe Bleat do
       expect(bleat.owned_by?(nil)).to be(false)
     end
   end
+  
+  describe "#hash_tags" do
+    it "creates a hash tag after being saved" do
+      bleat = build(:bleat, :content => "#winning")
+      bleat.hash_tags.should_receive(:build).
+        with(:tag => "#winning")
+      bleat.save
+    end
+    
+    it "downcases the tag" do
+      bleat = build(:bleat, :content => "#wiNnINg")
+      bleat.hash_tags.should_receive(:build).
+        with(:tag => "#winning")
+      bleat.save
+    end
+  end
 end

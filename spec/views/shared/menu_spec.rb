@@ -30,9 +30,9 @@ describe "shared/_menu.html.erb" do
       rendered.should have_link('Sign out', :href => destroy_user_session_path)
     end
     
-    it "includes a 'Welcome' link" do
+    it "includes a 'Profile' link" do
       render
-      rendered.should have_link('Welcome', :href => user_path(user))
+      rendered.should have_link('Profile', :href => user_path(user))
     end
     
     it "includes a 'Compose' link" do

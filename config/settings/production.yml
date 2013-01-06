@@ -1,5 +1,6 @@
 omniauth:
   facebook:
     key: '309640795822205'
-    secret: 
-   
+    secret:
+search:
+  use_tire: true

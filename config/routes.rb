@@ -20,8 +20,10 @@ MicroBlog::Application.routes.draw do
     resources :bleats
     
     match '/trending/:tag' => 'bleats#trending'  
+    match '/search' => 'search#index'
     match '/home' => 'home#index'
   end
+
   match ':locale' => 'home#welcome'
   root :to => 'home#welcome'
 end

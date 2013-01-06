@@ -1,6 +1,6 @@
 module BleatsHelper
   def linkify_tag(tag)
-    link_to tag, controller: 'bleats', action: 'trending', tag: tag
+    link_to tag, controller: 'search', action: 'index', q: tag
   end
 
   def linkify_content(content)

@@ -1,7 +1,7 @@
 Given /^I am authenticated$/ do
   @current_user = create(:user)
   visit '/sign_in'
-  within("form") do
+  within("form#new_user") do
     fill_in 'Email', :with => @current_user.email
     fill_in 'Password', :with => @current_user.password
   end

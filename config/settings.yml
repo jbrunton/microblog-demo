@@ -5,4 +5,6 @@ omniauth:
   github:
     key: 'cf81ea06f7bd85e75923'
     secret: 'a147ff6d7765e3cc7635a7a8716d6582bee60e05'
-   
+search:
+  use_tire: false
+

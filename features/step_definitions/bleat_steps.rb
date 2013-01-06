@@ -19,7 +19,7 @@ Then /^the first bleat should contain "(.*)"$/ do |content|
 end
 
 Then /^the first bleat should contain a link to the "(.*?)" tag$/ do |hashtag|
-  trending_url = url_for(:action => 'trending', :controller => 'bleats', :tag => hashtag)
+  trending_url = url_for(:action => 'trending', :controller => 'search', :tag => hashtag)
   page.all(".bleat").first.should have_link(hashtag, trending_url)
 end
 

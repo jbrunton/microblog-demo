@@ -1,10 +1,11 @@
+<% cache [user, current_user?(user)] do %>
 <div class="user panel radius">
     <div class="row collapse">
         <%= image_tag user.avatar_url, class: 'avatar' %>
         <div class='content'>
             <h6><%= link_to user.screen_name, user %></h6>
             <div class='actions'>
-                <% if can? :update, user %>
+                <% if current_user?(user) %>
                     <%= link_to edit_user_path(user) do %>
                         <i class="general foundicon-edit"></i>
                     <% end %>
@@ -14,3 +15,4 @@
         </div>
     </div>
 </div>
+<% end %>
